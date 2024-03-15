@@ -2,20 +2,21 @@
 require("dotenv").config(); // to use environment variables
 const express = require("express");
 
+// Import routes
+const cardRoutes = require("./routes/cardRoutes");
+
 // Create the app / server
 const app = express();
 
-// Middleware
+// MIDDLEWARE
+app.use(express.json()); // lets you access the request body in json
 app.use((req, res, next) => {
     // log the req method and path for every request
     console.log(`${req.method} request to "${req.path}"`);
     next();
 });
-
-// Create the routes
-app.get("/", (req, res) => {
-    res.json({ message: "Welcome to MEMO-GURU!" });
-});
+// Use the imported routes
+app.use("/api/cards", cardRoutes);
 
 // Start the app to listen on port 4000
 app.listen(process.env.PORT, () => {
