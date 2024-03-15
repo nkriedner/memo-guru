@@ -1,0 +1,14 @@
+{
+    "name": "memo-guru",
+    "version": "1.0.0",
+    "description": "Memo-Guru is an app to learn that uses flip card functionality and intelligent memo-levels for every card",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "author": "Nils Kriedner",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.18.3"
+    }
+}
