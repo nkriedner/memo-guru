@@ -1,4 +1,4 @@
-// Require express module
+// Require express module for creating an express router
 const express = require("express");
 
 // Create the router
