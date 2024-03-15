@@ -1,6 +1,7 @@
 // Require npm modules for the project
 require("dotenv").config(); // to use environment variables
 const express = require("express");
+const mongoose = require("mongoose"); // ODM package for MongoDB
 
 // Import routes
 const cardRoutes = require("./routes/cardRoutes");
@@ -18,7 +19,15 @@ app.use((req, res, next) => {
 // Use the imported routes
 app.use("/api/cards", cardRoutes);
 
-// Start the app to listen on port 4000
-app.listen(process.env.PORT, () => {
-    console.log(`Server listening on port ${process.env.PORT}!`);
-});
+// Connect to database & start server
+mongoose
+    .connect(process.env.MONGO_URI)
+    .then(() => {
+        // Start the app to listen for requests
+        app.listen(process.env.PORT, () => {
+            console.log(`Connected to database & listening on port ${process.env.PORT}!`);
+        });
+    })
+    .catch((error) => {
+        console.log(error);
+    });
