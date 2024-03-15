@@ -1,4 +1,5 @@
 // Require npm modules for the project
+require("dotenv").config(); // to use environment variables
 const express = require("express");
 
 // Create the app / server
@@ -10,6 +11,6 @@ app.get("/", (req, res) => {
 });
 
 // Start the app to listen on port 4000
-app.listen(4000, () => {
-    console.log("Server listening on port 4000!");
+app.listen(process.env.PORT, () => {
+    console.log(`Server listening on port ${process.env.PORT}!`);
 });
