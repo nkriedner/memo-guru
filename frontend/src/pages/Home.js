@@ -1,4 +1,7 @@
+// Import hooks from react
 import { useEffect, useState } from "react";
+// Import components
+import CardDetails from "../components/CardDetails";
 
 const Home = () => {
     // create state for card data
@@ -21,12 +24,19 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="home">
-            <h2>Home</h2>
-            <div className="cards">
+        <div className="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Japanese</th>
+                        <th>English</th>
+                        <th>MemoLevel</th>
+                    </tr>
+                </thead>
+
                 {/* only when there is card data: */}
-                {cards && cards.map((card) => <p key={card._id}>{card.content_1}</p>)}
-            </div>
+                <tbody>{cards && cards.map((card) => <CardDetails key={card._id} card={card} />)}</tbody>
+            </table>
         </div>
     );
 };

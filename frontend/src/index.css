@@ -1,33 +1,62 @@
-/* google font */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap");
-
-/* layout */
-:root {
-    --primary: #1aac83;
-    --error: #e7195a;
-}
-body {
-    background: #f1f1f1;
+* {
+    padding: 0;
     margin: 0;
-    font-family: "Poppins";
+    box-sizing: border-box;
 }
-header {
-    background: #fff;
+
+body {
+    font-family: sans-serif;
+    color: white;
 }
-header .container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-header a {
-    color: #333;
+
+a {
     text-decoration: none;
+    color: inherit;
 }
-.pages {
-    max-width: 1400px;
-    padding: 20px;
-    margin: 0 auto;
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-color: maroon;
+    padding: 1rem;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: salmon;
+}
+
+.table-wrapper {
+    border: 3px solid white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table,
+th,
+td {
+    /* background-color: green; */
+    border: 1px solid white;
+    border-collapse: collapse; /* to avoid double borders */
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+th {
+    background-color: rgb(51, 51, 107);
+}
+
+tbody tr {
+    background-color: rgb(99, 156, 14);
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgb(85, 119, 34);
 }
