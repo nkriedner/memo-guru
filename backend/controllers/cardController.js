@@ -36,6 +36,20 @@ const createCard = async (req, res) => {
     // retreive data for new card from request body
     const { content_1, content_2, memo_level } = req.body;
 
+    // create an array for the data that is not filled out
+    let emptyFields = [];
+    // add those data names which are missing to the array
+    if (!content_1) {
+        emptyFields.push("Front Side");
+    }
+    if (!content_2) {
+        emptyFields.push("Back Side");
+    }
+    // if there are emptyfields send an error telling which fields are missing
+    if (emptyFields.length > 0) {
+        return res.status(400).json({ error: "Please fill in all fields!", emptyFields });
+    }
+
     try {
         // create a new card (add document to db)
         const card = await Card.create({ content_1, content_2, memo_level });

@@ -163,3 +163,7 @@ tbody tr:hover {
 .delete:hover {
     background-color: hsl(0, 45%, 64%);
 }
+
+.error-border {
+    border: 5px solid red;
+}

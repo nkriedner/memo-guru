@@ -7,6 +7,7 @@ const CardForm = () => {
     const [content_1, setContent_1] = useState("");
     const [content_2, setContent_2] = useState("");
     const [error, setError] = useState(null);
+    const [emptyFields, setEmptyFields] = useState([]);
 
     const handleSubmit = async (e) => {
         console.log("handleSubmit running...");
@@ -30,12 +31,14 @@ const CardForm = () => {
 
         if (!response.ok) {
             setError(json.error);
+            setEmptyFields(json.emptyFields);
         }
         if (response.ok) {
             // reset the input and error values
             setContent_1("");
             setContent_2("");
             setError(null);
+            setEmptyFields([]);
 
             console.log("new card added...");
 
@@ -55,6 +58,7 @@ const CardForm = () => {
                     onChange={(e) => setContent_1(e.target.value)}
                     name="content_1"
                     value={content_1}
+                    className={emptyFields.includes("Front Side") ? "error-border" : ""}
                 />
             </div>
 
@@ -66,13 +70,14 @@ const CardForm = () => {
                     onChange={(e) => setContent_2(e.target.value)}
                     name="content_2"
                     value={content_2}
+                    className={emptyFields.includes("Back Side") ? "error-border" : ""}
                 />
             </div>
 
             <button>Create Card</button>
 
             {/* If there is an error -> show it */}
-            {error && <p className="error">Error: {error}</p>}
+            {error && <p className="error">{error}</p>}
         </form>
     );
 };
