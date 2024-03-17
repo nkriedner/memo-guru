@@ -19,22 +19,105 @@ header {
     top: 0;
     left: 0;
     width: 100vw;
-    background-color: maroon;
+    background-color: hsl(248, 53%, 35%);
     padding: 1rem;
 }
 
 main {
-    height: 100vh;
+    padding-top: 8rem;
+    min-height: 100vh;
+    background-color: hsl(248, 53%, 75%);
+    margin: auto;
+    padding-bottom: 5rem;
+}
+
+section {
     display: flex;
     justify-content: center;
+    padding: 2rem;
+}
+
+form {
+    background-color: slateblue;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 900px;
+}
+
+form h2 {
+    text-align: center;
+    font-size: 2rem;
+    text-transform: capitalize;
+    margin-bottom: 1.5rem;
+}
+
+form .input-wrapper {
+    display: flex;
     align-items: center;
-    background-color: salmon;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+form label {
+    margin-bottom: 0.5rem;
+}
+
+form input {
+    padding: 0.5rem;
+    flex: 1;
+    border-radius: 10px;
+}
+
+form button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: hsl(80, 64%, 31%);
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-weight: bold;
+    outline: none;
+    text-transform: uppercase;
+    transition: all 0.5s;
+    width: 100%;
+}
+
+form button:hover {
+    background-color: hsl(80, 64%, 36%);
+}
+
+form .error {
+    color: red;
+    color: #fff;
+    font-size: 1.5rem;
+    background-color: white;
+    background-color: rgb(165, 28, 28);
+    padding: 1rem;
+    margin-top: 3rem;
+    /* border: 2px solid red; */
+    border-radius: 10px;
+    font-style: italic;
 }
 
 .table-wrapper {
     border: 3px solid white;
     border-radius: 10px;
-    overflow: hidden;
+    display: inline-block;
+    width: 90%;
+    max-width: 900px;
+}
+
+table {
+    width: 100%;
+}
+
+caption {
+    background-color: slateblue;
+    padding: 2rem 0;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 table,
@@ -50,13 +133,23 @@ td {
 }
 
 th {
-    background-color: rgb(51, 51, 107);
+    background-color: hsl(248, 53%, 35%);
 }
 
 tbody tr {
     background-color: rgb(99, 156, 14);
+    background-color: hsl(248, 53%, 75%);
+    background-color: hsl(248, 53%, 58%);
+    background-color: slateblue;
+    transition: all 0.5s;
 }
 
 tbody tr:nth-child(even) {
+    background-color: hsl(248, 53%, 48%);
+}
+
+tbody tr:hover {
+    background-color: yellowgreen;
     background-color: rgb(85, 119, 34);
+    cursor: pointer;
 }
