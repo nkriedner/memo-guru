@@ -149,7 +149,17 @@ tbody tr:nth-child(even) {
 }
 
 tbody tr:hover {
-    background-color: yellowgreen;
+    /* background-color: yellowgreen;
     background-color: rgb(85, 119, 34);
+    cursor: pointer; */
+}
+
+.delete {
+    transition: all 0.5s;
     cursor: pointer;
+    /* background-color: hsl(0, 45%, 64%); */
+}
+
+.delete:hover {
+    background-color: hsl(0, 45%, 64%);
 }

@@ -42,6 +42,7 @@ const Home = () => {
                                 <th>Front Side</th>
                                 <th>Back Side</th>
                                 <th>MemoLevel</th>
+                                <th>Delete</th>
                             </tr>
                         </thead>
 
