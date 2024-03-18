@@ -1,9 +1,15 @@
+/* ********* */
+/* CSS RESET */
+/* ********* */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+/* ************** */
+/* GENERAL STYLES */
+/* ************** */
 body {
     font-family: sans-serif;
     color: white;
@@ -37,6 +43,9 @@ section {
     padding: 2rem;
 }
 
+/* *********** */
+/* FORM STYLES */
+/* *********** */
 form {
     background-color: slateblue;
     padding: 2rem;
@@ -89,18 +98,18 @@ form button:hover {
 }
 
 form .error {
-    color: red;
     color: #fff;
     font-size: 1.5rem;
-    background-color: white;
     background-color: rgb(165, 28, 28);
     padding: 1rem;
     margin-top: 3rem;
-    /* border: 2px solid red; */
     border-radius: 10px;
     font-style: italic;
 }
 
+/* ************ */
+/* TABLE STYLES */
+/* ************ */
 .table-wrapper {
     border: 3px solid white;
     border-radius: 10px;
@@ -123,7 +132,6 @@ caption {
 table,
 th,
 td {
-    /* background-color: green; */
     border: 1px solid white;
     border-collapse: collapse; /* to avoid double borders */
     border-radius: 10px;
@@ -132,14 +140,11 @@ td {
     font-size: 1.5rem;
 }
 
-th {
+thead th {
     background-color: hsl(248, 53%, 35%);
 }
 
 tbody tr {
-    background-color: rgb(99, 156, 14);
-    background-color: hsl(248, 53%, 75%);
-    background-color: hsl(248, 53%, 58%);
     background-color: slateblue;
     transition: all 0.5s;
 }
@@ -148,25 +153,13 @@ tbody tr:nth-child(even) {
     background-color: hsl(248, 53%, 48%);
 }
 
-tbody tr:hover {
-    /* background-color: yellowgreen;
-    background-color: rgb(85, 119, 34);
-    cursor: pointer; */
-}
-
 .delete {
-    transition: all 0.5s;
+    transition: all 1s;
     cursor: pointer;
-    /* background-color: hsl(0, 45%, 64%); */
 }
 
 .delete:hover {
-    background-color: hsl(0, 45%, 64%);
-}
-
-.delete:hover svg {
-    fill: white;
-    transform: scale(1.2);
+    background-color: hsl(0, 44%, 31%);
 }
 
 .error-border {
@@ -174,6 +167,10 @@ tbody tr:hover {
 }
 
 svg {
-    fill: rgb(249, 186, 186);
     fill: white;
+    transition: all 0.5s;
+}
+
+.delete:hover svg {
+    transform: scale(1.3) rotate(-120deg);
 }

@@ -3,6 +3,7 @@ import { useCardsContext } from "../hooks/useCardsContext";
 const CardDetails = ({ card, index }) => {
     const { dispatch } = useCardsContext();
 
+    // Handle the click on the 'Delete' button
     const handleClick = async () => {
         const response = await fetch("/api/cards/" + card._id, {
             method: "DELETE",
@@ -21,7 +22,7 @@ const CardDetails = ({ card, index }) => {
             <td>{card.content_2}</td>
             <td>{card.memo_level}</td>
             <td className="delete" title="Delete Card" onClick={handleClick}>
-                {/* SVG code included here */}
+                {/* SVG code for the trash/delete icon: */}
                 <svg
                     fill="#000000"
                     version="1.1"

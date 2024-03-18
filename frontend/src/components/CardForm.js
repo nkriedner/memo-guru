@@ -10,14 +10,11 @@ const CardForm = () => {
     const [emptyFields, setEmptyFields] = useState([]);
 
     const handleSubmit = async (e) => {
-        console.log("handleSubmit running...");
-        e.preventDefault();
+        e.preventDefault(); // prevents the default form submission behavior
 
         const newCard = { content_1, content_2 };
-        console.log("content_1:", content_1);
-        console.log("content_2:", content_2);
-        console.log("newCard:", newCard);
 
+        // POST the new card
         const response = await fetch("/api/cards", {
             method: "POST",
             body: JSON.stringify(newCard),
@@ -27,11 +24,11 @@ const CardForm = () => {
         });
 
         const json = await response.json();
-        console.log("json:", json);
 
+        // if there is a problem with the response:
         if (!response.ok) {
-            setError(json.error);
-            setEmptyFields(json.emptyFields);
+            setError(json.error); // set the error received from the response
+            setEmptyFields(json.emptyFields); // define the emptyFields of the form
         }
         if (response.ok) {
             // reset the input and error values
@@ -40,7 +37,7 @@ const CardForm = () => {
             setError(null);
             setEmptyFields([]);
 
-            console.log("new card added...");
+            console.log("New card added:", json);
 
             dispatch({ type: "CREATE_CARD", payload: json });
         }
@@ -56,8 +53,8 @@ const CardForm = () => {
                     id="content_1"
                     type="text"
                     onChange={(e) => setContent_1(e.target.value)}
-                    name="content_1"
                     value={content_1}
+                    // if the input field is empty -> style it with a red border
                     className={emptyFields.includes("Front Side") ? "error-border" : ""}
                 />
             </div>
@@ -68,8 +65,8 @@ const CardForm = () => {
                     id="content_2"
                     type="text"
                     onChange={(e) => setContent_2(e.target.value)}
-                    name="content_2"
                     value={content_2}
+                    // if the input field is empty -> style it with a red border
                     className={emptyFields.includes("Back Side") ? "error-border" : ""}
                 />
             </div>
