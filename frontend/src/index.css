@@ -164,6 +164,16 @@ tbody tr:hover {
     background-color: hsl(0, 45%, 64%);
 }
 
+.delete:hover svg {
+    fill: white;
+    transform: scale(1.2);
+}
+
 .error-border {
     border: 5px solid red;
+}
+
+svg {
+    fill: rgb(249, 186, 186);
+    fill: white;
 }
